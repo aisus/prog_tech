@@ -7,16 +7,20 @@ namespace UI
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("\n================================");
-            var a = UserInput(1);
-            var b = UserInput(2);
-            var result = Utility.Utility.AreCoprime(a, b);
-            Console.WriteLine($"{a} and {b} are{((result) ? "" : " not")} coprime numbers");
+            Console.WriteLine("\n==========COPRIME=NUMBERS==========\n");
+            while (true)
+            {
+                var a = UserInput("A");
+                var b = UserInput("B");
+                var result = Utility.Utility.AreCoprime(a, b);
+                Console.WriteLine($"{a} and {b} are{((result) ? "" : " not")} coprime numbers");
+                Console.WriteLine("____________________________________\n");
+            }
         }
 
-        static int UserInput(int idx)
+        static int UserInput(string idx)
         {
-            Console.WriteLine($"Enter positive integer number #{idx}:");
+            Console.WriteLine($"Enter non-negative integer number {idx}:");
             while (true)
             {
                 var str = Console.ReadLine().Trim();
@@ -27,7 +31,7 @@ namespace UI
                 }
                 else
                 {
-                    Console.WriteLine($"Only positive integer allowed!");
+                    Console.WriteLine($"Only non-negative integer allowed, try again");
                 }
             }
         }
