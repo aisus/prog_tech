@@ -2,14 +2,14 @@ D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\bin\Debug\Sudoku.exe.config
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\bin\Debug\Sudoku.exe
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.csprojAssemblyReference.cache
-D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\MainWindow.g.cs
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\App.g.cs
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.cache
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.lref
-D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\MainWindow.baml
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.Properties.Resources.resources
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.GenerateResource.cache
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.csproj.CoreCompileInputs.cache
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.exe
 D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
+D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\MainWindow.g.cs
+D:\repositories\stud\prog_tech\Two\Sudoku\Sudoku\obj\Debug\MainWindow.baml
