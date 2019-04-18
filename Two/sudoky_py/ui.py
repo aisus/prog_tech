@@ -110,7 +110,7 @@ class SudokuUI(Frame):
 
 if __name__ == '__main__':
     root = Tk()
-    loaded_game_state = load_game_state(GAME_STATE_PATH, 4)
+    loaded_game_state = load_game_state(GAME_STATE_PATH, 4, VALID_CHARACTERS)
     ui = SudokuUI(root, loaded_game_state)
     root.geometry("%dx%d" % (BOARD_WIDTH, BOARD_HEIGHT + 40))
     root.mainloop()

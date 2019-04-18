@@ -26,7 +26,7 @@ class GameState:
             return True
 
         def validate_columns(grid):
-            t_grid = [*zip(*grid)]
+            t_grid = list(zip(*grid))
             return validate_rows(t_grid)
 
         def validate_squares(grid):
