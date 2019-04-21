@@ -1,27 +1,21 @@
-from game_state import *
-from player_state import *
+from enum import Enum
 
-
-class GamePhase(Enum):
-    WAITING = 0
-    PLAYER_TURN = 1
-    OPPONENT_TURN = 2
-    WIN = 3
-    LOSE = 4
-    CONNECTION_LOST = 5
-    RESTART = 6
+from board import Board
+from ui import ChessUI
 
 
 class TurnState(Enum):
-    WAITING = 0
-    SELECTED = 1
-    TURN = 2
+    OPPONENT_TURN = 0
+    WAITING = 1,
+    SELECTED = 2
 
 
 class Controller:
 
     def __init__(self):
-        self.game_state = GameState.initial_positions()
-        self.player_state = PlayerState()
-        self.phase = GamePhase.WAITING
-        self.turn = TurnState.WAITING
+        self.game_state = Board([[''] * 8] * 8)
+        self.turn = TurnState.OPPONENT_TURN
+        self.ui = None
+
+    def register_ui(self, ui: ChessUI):
+        self.ui = ui

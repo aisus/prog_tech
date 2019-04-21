@@ -2,20 +2,20 @@ from tkinter import Tk, Canvas, Frame, BOTH, TOP, WORD, END, Text
 from controller import *
 
 CELLS_COUNT = 8
-MARGIN = 0
+MARGIN = 5
 CELL_SIZE = 50
 BOARD_WIDTH = BOARD_HEIGHT = MARGIN * 2 + CELL_SIZE * CELLS_COUNT
 
 WHITE_CELL_COLOR = 'AntiqueWhite1'
 BLACK_CELL_COLOR = 'AntiqueWhite3'
 CURSOR_COLOR = 'MidnightBlue'
-CURSOR_ON_FIGURE_COLOR = 'cyan'
+CURSOR_ON_FIGURE_COLOR = ''
 SELECTION_COLOR = 'SeaGreen1'
 CANT_SELECT_COLOR = 'red'
-FIGURES_SIZE = 18
+FIGURES_SIZE = 24
 
 
-class SudokuUI(Frame):
+class ChessUI(Frame):
     def __init__(self, parent, ctrl):
         Frame.__init__(self, parent)
         self.parent = parent
@@ -34,7 +34,7 @@ class SudokuUI(Frame):
         self.init_ui()
 
     def init_ui(self):
-        self.parent.title("Checkers")
+        self.parent.title("Pawns")
         self.pack(fill=BOTH, expand=1)
         self.canvas.pack(fill=BOTH, side=TOP)
         self.textbox.pack()
@@ -49,7 +49,7 @@ class SudokuUI(Frame):
     def draw_grid(self):
         for i in range(CELLS_COUNT):
             for j in range(CELLS_COUNT):
-                color = [WHITE_CELL_COLOR, BLACK_CELL_COLOR][(i - j) % 2]
+                color = [BLACK_CELL_COLOR, WHITE_CELL_COLOR][(i - j) % 2]
                 self.canvas.create_rectangle(
                     MARGIN + i * CELL_SIZE, MARGIN + j * CELL_SIZE,
                     MARGIN + (i + 1) * CELL_SIZE, MARGIN + (j + 1) * CELL_SIZE,
@@ -60,7 +60,7 @@ class SudokuUI(Frame):
         self.canvas.delete("figures")
         for i in range(CELLS_COUNT):
             for j in range(CELLS_COUNT):
-                if self.game_state.grid[i][j] != 0:
+                if self.game_state.grid[i][j] != '':
                     self.canvas.create_text(
                         MARGIN + j * CELL_SIZE + CELL_SIZE / 2,
                         MARGIN + i * CELL_SIZE + CELL_SIZE / 2,
@@ -115,7 +115,7 @@ class SudokuUI(Frame):
             self.reset_selection()
 
         self.draw_cursor()
-z
+
     def return_pressed(self, event):
         if self.controller.turn != TurnState.SELECTED:
             if self.game_state.grid[self.cursor_row][self.cursor_col] == '':
@@ -147,6 +147,6 @@ if __name__ == '__main__':
     root = Tk()
     root.resizable(False, False)
     controller = Controller()
-    ui = SudokuUI(root, controller)
+    ui = ChessUI(root, controller)
     root.geometry("%dx%d" % (BOARD_WIDTH, BOARD_HEIGHT + 40))
     root.mainloop()

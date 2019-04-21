@@ -2,11 +2,71 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1efcda6a-07de-488e-8137-7287d148cbc1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../checkers_py/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../checkers_py/controller.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../checkers_py/player_state.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/.vs/Sudoku/v15/.suo" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/.vs/Sudoku/v15/Server/sqlite3/db.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/.vs/Sudoku/v15/Server/sqlite3/storage.ide" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/.vs/Sudoku/v15/Server/sqlite3/storage.ide-shm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/.vs/Sudoku/v15/Server/sqlite3/storage.ide-wal" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku.sln" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku.sln.DotSettings" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku.sln.DotSettings.user" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/App.config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/App.xaml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/App.xaml.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Controller/SudokuController.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/MainWindow.xaml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/MainWindow.xaml.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Model/SudokuBoardEntity.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Properties/Annotations.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Properties/AssemblyInfo.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Properties/Resources.Designer.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Properties/Resources.resx" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Properties/Settings.Designer.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Properties/Settings.settings" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Sudoku.csproj" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Utility/DataViewHelper.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/Utility/Ref.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/bin/Debug/Sudoku.exe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/bin/Debug/Sudoku.exe.config" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/bin/Debug/Sudoku.pdb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/App.g.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/App.g.i.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/MainWindow.baml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/MainWindow.g.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/MainWindow.g.i.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.Properties.Resources.resources" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.csproj.CoreCompileInputs.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.csproj.FileListAbsolute.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.csproj.GenerateResource.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.csprojAssemblyReference.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.exe" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.g.resources" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku.pdb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku_MarkupCompile.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku_MarkupCompile.i.cache" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/Sudoku_MarkupCompile.lref" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/View/MainWindow.g.i.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/View/SudokuBoard.g.i.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../Sudoku/Sudoku/obj/Debug/View/Window1.g.i.cs" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/.idea/pawns_py.iml" afterPath="$PROJECT_DIR$/.idea/pawns_py.iml" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/controller.py" afterPath="$PROJECT_DIR$/controller.py" />
+      <change beforePath="$PROJECT_DIR$/game_state.py" afterPath="$PROJECT_DIR$/board.py" />
+      <change beforePath="$PROJECT_DIR$/player_state.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/ui.py" afterPath="$PROJECT_DIR$/ui.py" />
+      <change beforePath="$PROJECT_DIR$/../sudoky_py/.idea/misc.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/../../Two/sudoky_py/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../Two/sudoky_py/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/../../Two/sudoky_py/game_state.py" afterPath="$PROJECT_DIR$/../../Two/sudoky_py/game_state.py" />
+      <change beforePath="$PROJECT_DIR$/../../Two/sudoky_py/game_state.xml" afterPath="$PROJECT_DIR$/../../Two/sudoky_py/game_state.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,13 +74,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../checkers_py/ui.py">
+      <file leaf-file-name="controller.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="736">
-              <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+            <state relative-caret-position="403">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding>
-                <element signature="e#0#65#0" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,16 +115,22 @@
         <option value="$PROJECT_DIR$/src/GameState.py" />
         <option value="$PROJECT_DIR$/src/UI.py" />
         <option value="$PROJECT_DIR$/UI.py" />
-        <option value="$PROJECT_DIR$/ui.py" />
         <option value="$PROJECT_DIR$/example.xml" />
         <option value="$PROJECT_DIR$/game_state.xml" />
         <option value="$PROJECT_DIR$/xml_utils.py" />
-        <option value="$PROJECT_DIR$/game_state.py" />
         <option value="$PROJECT_DIR$/../checkers_py/god_object.py" />
         <option value="$PROJECT_DIR$/../checkers_py/player_state.py" />
         <option value="$PROJECT_DIR$/../checkers_py/controller.py" />
         <option value="$PROJECT_DIR$/../checkers_py/game_state.py" />
         <option value="$PROJECT_DIR$/../checkers_py/ui.py" />
+        <option value="$PROJECT_DIR$/game_state.py" />
+        <option value="$PROJECT_DIR$/server/__init__.py" />
+        <option value="$PROJECT_DIR$/server/game_state.py" />
+        <option value="$PROJECT_DIR$/server/game.py" />
+        <option value="$PROJECT_DIR$/server/__main__.py" />
+        <option value="$PROJECT_DIR$/board.py" />
+        <option value="$PROJECT_DIR$/ui.py" />
+        <option value="$PROJECT_DIR$/controller.py" />
       </list>
     </option>
   </component>
@@ -82,24 +148,54 @@
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Python</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>PyPep8Inspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="checkers_py" type="b2602c69:ProjectViewProjectNode" />
-              <item name="checkers_py" type="462c0819:PsiDirectoryNode" />
+              <item name="pawns_py" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -125,9 +221,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ui (1)">
+  <component name="RunManager" selected="Python.ui">
     <configuration name="game_state" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pawns_py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -138,17 +233,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pawns_py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../checkers_py/game_state.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="main_form" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pawns_py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -159,17 +251,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pawns_py" />
       <option name="SCRIPT_NAME" value="D:\repositories\stud\prog_tech\Two\sudoky_py\ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="ui (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pawns_py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -180,17 +269,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pawns_py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../checkers_py/ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration name="ui" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="pawns_py" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -201,14 +287,12 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="pawns_py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ui.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <module name="pawns_py" />
@@ -253,19 +337,23 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.main_form" />
-      <item itemvalue="Python.ui" />
-      <item itemvalue="Python.game_state" />
-      <item itemvalue="Python.ui (1)" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="Python.game_state" />
+      <item index="1" class="java.lang.String" itemvalue="Python.main_form" />
+      <item index="2" class="java.lang.String" itemvalue="Python.ui" />
+      <item index="3" class="java.lang.String" itemvalue="Python.ui (1)" />
     </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Python.ui (1)" />
-        <item itemvalue="Python.game_state" />
-        <item itemvalue="Python.ui" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.ui" />
+        <item index="1" class="java.lang.String" itemvalue="Python.ui (1)" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main_form" />
+        <item index="3" class="java.lang.String" itemvalue="Python.game_state" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -284,74 +372,125 @@
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11940298" />
-      <window_info id="Structure" order="1" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Event Log" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="1" />
-      <window_info anchor="bottom" id="Python Console" order="2" />
-      <window_info anchor="bottom" id="Terminal" order="3" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32934132" />
-      <window_info anchor="bottom" id="Debug" order="6" weight="0.3992016" />
-      <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="9" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" anchor="right" id="Run" order="3" visible="true" weight="0.2585288" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3280318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969216" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager />
+    <watches-manager />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/../checkers_py/example.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../checkers_py/xml_utils.py">
+    <entry file="file://$PROJECT_DIR$/server/__main__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="61" column="29" selection-start-line="61" selection-end-line="62" />
+        <state relative-caret-position="483">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../checkers_py/game_state.xml">
+    <entry file="file://$PROJECT_DIR$/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="59" column="37" lean-forward="false" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1633">
+          <caret line="71" column="14" lean-forward="false" selection-start-line="71" selection-start-column="14" selection-end-line="71" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ui.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1334">
+          <caret line="59" column="37" lean-forward="true" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/tkinter/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/../checkers_py/xml_utils.py" />
+    <entry file="file://$PROJECT_DIR$/../checkers_py/game_state.xml" />
+    <entry file="file://$PROJECT_DIR$/../checkers_py/player_state.py" />
+    <entry file="file://$PROJECT_DIR$/../checkers_py/controller.py" />
+    <entry file="file://$PROJECT_DIR$/../checkers_py/game_state.py" />
+    <entry file="file://$PROJECT_DIR$/../checkers_py/ui.py" />
+    <entry file="file://$PROJECT_DIR$/server/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="21" lean-forward="true" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/__main__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="529">
+          <caret line="23" column="49" lean-forward="false" selection-start-line="23" selection-start-column="49" selection-end-line="23" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/player_state.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <caret line="14" column="24" lean-forward="false" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../checkers_py/player_state.py">
+    <entry file="file://$PROJECT_DIR$/ui.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../checkers_py/controller.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="19" lean-forward="true" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        <state relative-caret-position="217">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#933#1243#0" expanded="false" />
+            <element signature="e#1375#1761#0" expanded="false" />
+            <element signature="e#1799#2257#0" expanded="false" />
+            <element signature="e#2295#3171#0" expanded="false" />
+            <element signature="e#3211#3693#0" expanded="false" />
+            <element signature="e#3835#4340#0" expanded="false" />
+            <element signature="e#4387#5000#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../checkers_py/game_state.py">
+    <entry file="file://$PROJECT_DIR$/controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="30" selection-start-line="30" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../checkers_py/ui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="736">
-          <caret line="128" column="23" selection-start-line="128" selection-start-column="23" selection-end-line="128" selection-end-column="23" />
+        <state relative-caret-position="403">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding>
-            <element signature="e#0#65#0" expanded="true" />
+            <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>

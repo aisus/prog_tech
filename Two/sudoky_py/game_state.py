@@ -41,7 +41,9 @@ class GameState:
         columns_status = validate_columns(self.grid)
         squares_status = validate_squares(self.grid)
 
-        if rows_status and columns_status and squares_status:
+        valid = rows_status and columns_status and squares_status
+
+        if valid:
             return 'Solution valid!'
 
         message = 'Failed: '
