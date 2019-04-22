@@ -3,6 +3,7 @@ import socket
 
 from flask import Flask
 from flask_socketio import SocketIO, emit
+from socket_events import SocketEvents
 
 from game import *
 
@@ -21,7 +22,7 @@ def api_get_game_state():
     return json.dumps(result, sort_keys=True, indent=3), 200
 
 
-@socketio.on('get_game_state')
+@socketio.on(SocketEvents.GET_GAME_STATE)
 def get_game_state():
     result = {
         "turn": game.current_turn.name,
@@ -32,17 +33,18 @@ def get_game_state():
     socketio.emit('set_game_state', response)
 
 
-@socketio.on('disconnect')
+@socketio.on(SocketEvents.DISCONNECT)
 def handle_disconnect():
     print('====== DISCONNECTED')
+    game.state = ServerState.WAITING
 
 
-@socketio.on('connect')
+@socketio.on(SocketEvents.CONNECT)
 def handle_connect():
     print('======= CONNECTED')
 
 
-@socketio.on('get_color')
+@socketio.on(SocketEvents.GET_COLOR)
 def get_color():
     result = {
         "color": "",
@@ -62,7 +64,7 @@ def get_color():
     socketio.emit('set_color', response)
 
 
-@socketio.on('do_move')
+@socketio.on(SocketEvents.DO_MOVE)
 def handle_move(json_data):
     data = json.loads(json_data)
     result = {
