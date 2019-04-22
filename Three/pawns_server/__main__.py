@@ -10,7 +10,7 @@ socketIo = SocketIO(app)
 game = Game()
 
 
-@app.route("/")
+@socketIo.on('connect')
 def connect():
     result = {
         "color": "",
@@ -18,15 +18,16 @@ def connect():
     if game.state == ServerState.WAITING:
         game.state = ServerState.FIRST_CLIENT_CONNECTED
         result = {
-            "color": Color.WHITE,
+            "color": "white",
         }
     elif game.state == ServerState.FIRST_CLIENT_CONNECTED:
         game.state = ServerState.GAME_RUNNING
         result = {
-            "color": Color.BLACK,
+            "color": "black",
         }
     response = json.dumps(result, sort_keys=True, indent=3)
-    send(response)
+    while True:
+        send(response)
 
 
 @socketIo.on("move", namespace="/socket")
