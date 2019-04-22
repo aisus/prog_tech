@@ -1,5 +1,8 @@
-from tkinter import Tk, Canvas, Frame, BOTH, TOP, WORD, END, Text
-from controller import *
+import logging
+from threading import Thread
+from tkinter import Tk, Canvas, Frame, BOTH, TOP, WORD, Text
+
+from board import Board, TurnState
 
 CELLS_COUNT = 8
 MARGIN = 5
@@ -14,13 +17,14 @@ SELECTION_COLOR = 'SeaGreen1'
 CANT_SELECT_COLOR = 'red'
 FIGURES_SIZE = 24
 
+UIObject = None
+
 
 class ChessUI(Frame):
-    def __init__(self, parent, ctrl):
+    def __init__(self, parent, game_state):
         Frame.__init__(self, parent)
         self.parent = parent
-        self.controller = ctrl
-        self.game_state = controller.game_state
+        self.game_state = game_state
 
         self.cursor_row, self.cursor_col = -1, -1
 
@@ -46,6 +50,10 @@ class ChessUI(Frame):
         self.canvas.bind("<Return>", self.return_pressed)
 
     # _RENDERING________________________________________________________________________________
+    def redraw(self, grid):
+        self.game_state.grid = grid
+        self.draw_figures()
+
     def draw_grid(self):
         for i in range(CELLS_COUNT):
             for j in range(CELLS_COUNT):
@@ -70,7 +78,7 @@ class ChessUI(Frame):
     def draw_cursor(self):
 
         def get_color():
-            if self.controller.turn != TurnState.SELECTED:
+            if self.game_state.Turn != TurnState.SELECTED:
                 return CURSOR_ON_FIGURE_COLOR if self.game_state.grid[self.cursor_row][self.cursor_col] != '' \
                     else CURSOR_COLOR
             else:
@@ -117,11 +125,11 @@ class ChessUI(Frame):
         self.draw_cursor()
 
     def return_pressed(self, event):
-        if self.controller.turn != TurnState.SELECTED:
+        if self.game_state.turn != TurnState.SELECTED:
             if self.game_state.grid[self.cursor_row][self.cursor_col] == '':
                 return
 
-            self.controller.turn = TurnState.SELECTED
+            self.game_state.turn = TurnState.SELECTED
             self.game_state.selected_cell = [self.cursor_row, self.cursor_col]
             self.draw_selection()
         else:
@@ -136,17 +144,36 @@ class ChessUI(Frame):
     def reset_selection(self):
         self.cursor_row, self.cursor_col = -1, -1
         self.canvas.delete("selection")
-        self.controller.turn = TurnState.WAITING
+        self.game_state.turn = TurnState.WAITING
 
 
 #     self.textbox.delete(1.0, END)
 #        self.textbox.insert(1.0, message)
 
 
-if __name__ == '__main__':
+def run():
     root = Tk()
     root.resizable(False, False)
-    controller = Controller()
-    ui = ChessUI(root, controller)
+    game_state = Board.from_array([[''] * 8] * 8)
+    global UIObject
+    UIObject = ChessUI(root, game_state)
     root.geometry("%dx%d" % (BOARD_WIDTH, BOARD_HEIGHT + 40))
     root.mainloop()
+
+
+def redraw(grid):
+    global UIObject
+    UIObject.redraw(grid)
+
+
+class UiThread(Thread):
+    def __init__(self):
+        Thread.__init__(self)
+        self.logger = logging.getLogger("ui")
+
+    def run(self):
+        run()
+
+    def __del__(self):
+        self.logger.info("FUCK ME IN MY FACE! MY NAME IS UI!")
+        self.logger.info("*dies*")

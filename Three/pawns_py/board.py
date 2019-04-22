@@ -1,12 +1,21 @@
 # White pawn
+from enum import Enum
+
 W = '\u2659'
 # Black pawn
 B = '\u265F'
 
 
+class TurnState(Enum):
+    OPPONENT_TURN = 0
+    WAITING = 1,
+    SELECTED = 2
+
+
 class Board:
 
     def __init__(self, data):
+        self.Turn = TurnState.WAITING
         self.grid = data
         self.selected_cell = []
 

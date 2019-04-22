@@ -37,7 +37,7 @@ class Board:
         symbols = set()
         for row in self.grid:
             for cell in row:
-                set.add(cell)
+                symbols.add(cell)
         if B not in symbols:
             return 'white'
         if W not in symbols:

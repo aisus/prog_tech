@@ -6,6 +6,9 @@ class Color(Enum):
     WHITE = True,
     BLACK = False
 
+    def __str__(self):
+        return str(self.value)
+
 
 class ServerState(Enum):
     WAITING = 0

@@ -1,38 +1,42 @@
-from enum import Enum
+import json
 
 from socketIO_client import SocketIO
 
-from board import Board
-from ui import ChessUI
+import ui
+import logging
+logger = logging.getLogger("Main")
+logging.basicConfig(
+    level=logging.INFO
+)
+sio = SocketIO('http://localhost:5000')
 
 
-class TurnState(Enum):
-    OPPONENT_TURN = 0
-    WAITING = 1,
-    SELECTED = 2
+def do_move(selected, target):
+    pass
 
 
-class Controller:
+def __set_color(data):
+    obj = json.loads(data)
+    color = obj["color"]
+    print(f"color : {color}")
 
-    def __init__(self):
-        self.game_state = Board([[''] * 8] * 8)
-        self.turn = TurnState.OPPONENT_TURN
-        self.ui = None
-        self.socketIo = None
-        self.connect_to_server()
 
-    def register_ui(self, ui: ChessUI):
-        self.ui = ui
+def __set_game_state(data):
+    # print(f"data : {data}")
+    obj = json.loads(data)
+    board = obj['board']
+    # print(board)
+    ui.redraw(board)
 
-    def connect_to_server(self):
-        self.socketIo = SocketIO('localhost', 5000)
-        self.socketIo.on('connect', self.on_connect)
-        self.socketIo.on('disconnect', self.on_disconnect)
-        self.socketIo.connect()
-        self.socketIo.wait()
 
-    def on_connect(self, data):
-        print(f"data : {data}")
+if __name__ == '__main__':
+    logger.info("Started")
+    ui_thread = ui.UiThread()
+    ui_thread.start()
 
-    def on_disconnect(self):
-        print('disconnect')
+    sio.connect('http://localhost:5000')
+    sio.on('set_color', __set_color)
+    sio.on('set_game_state', __set_game_state)
+    sio.emit('get_color')
+    sio.emit('get_game_state')
+    sio.wait(1)
