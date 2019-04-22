@@ -1,9 +1,8 @@
 import json
-import socket
 
 from flask import Flask
 from flask_socketio import SocketIO, emit
-from socket_events import SocketEvents
+import socket_events as events
 
 from game import *
 
@@ -22,7 +21,7 @@ def api_get_game_state():
     return json.dumps(result, sort_keys=True, indent=3), 200
 
 
-@socketio.on(SocketEvents.GET_GAME_STATE)
+@socketio.on(events.GET_GAME_STATE)
 def get_game_state():
     result = {
         "turn": game.current_turn.name,
@@ -30,21 +29,21 @@ def get_game_state():
         "winner": game.board.check_win_conditions()
     }
     response = json.dumps(result, sort_keys=True, indent=3)
-    socketio.emit('set_game_state', response)
+    socketio.emit(events.SET_GAME_STATE, response)
 
 
-@socketio.on(SocketEvents.DISCONNECT)
+@socketio.on(events.DISCONNECT)
 def handle_disconnect():
     print('====== DISCONNECTED')
     game.state = ServerState.WAITING
 
 
-@socketio.on(SocketEvents.CONNECT)
+@socketio.on(events.CONNECT)
 def handle_connect():
     print('======= CONNECTED')
 
 
-@socketio.on(SocketEvents.GET_COLOR)
+@socketio.on(events.GET_COLOR)
 def get_color():
     result = {
         "color": "",
@@ -52,19 +51,19 @@ def get_color():
     if game.state == ServerState.WAITING:
         game.state = ServerState.FIRST_CLIENT_CONNECTED
         result = {
-            "color": "WHITE",
+            "color": "white",
         }
     elif game.state == ServerState.FIRST_CLIENT_CONNECTED:
         game.state = ServerState.GAME_RUNNING
         result = {
-            "color": "BLACK",
+            "color": "black",
         }
     response = json.dumps(result, sort_keys=True, indent=3)
     print(response)
-    socketio.emit('set_color', response)
+    socketio.emit(events.SET_COLOR, response)
 
 
-@socketio.on(SocketEvents.DO_MOVE)
+@socketio.on(events.DO_MOVE)
 def handle_move(json_data):
     data = json.loads(json_data)
     result = {
@@ -82,7 +81,7 @@ def handle_move(json_data):
     # if check_win_conditions finds no winner, it returns ''
     result["winner"] = game.board.check_win_conditions()
     response = json.dumps(result, sort_keys=True, indent=3)
-    emit(response, namespace="/socket", broadcast=True)
+    socketio.emit(events.SET_GAME_STATE, response)
 
 
 def validate_positions_and_do_move(selected, target):
