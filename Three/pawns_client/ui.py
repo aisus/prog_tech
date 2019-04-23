@@ -27,7 +27,7 @@ class ChessUI(Frame):
         self.parent = parent
         self.game_state = game_state
 
-        self.parent.protocol("WM_DELETE_WINDOW", self.on_closing)
+        #self.parent.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         self.cursor_row, self.cursor_col = -1, -1
 
@@ -181,6 +181,10 @@ def run():
 def set_board(grid):
     # global UIObject
     UIObject.redraw(grid)
+
+
+def get_color():
+    return UIObject.game_state.color
 
 
 def set_color(color):

@@ -25,7 +25,9 @@ class Board:
         return cls(grid)
 
     def validate_selection(self, i, j):
-        return (self.grid[i][j] == W and self.color == 'white') or (self.grid[i][j] == B and self.color == 'black')
+        res = (self.grid[i][j] == W and self.color == 'white') or (self.grid[i][j] == B and self.color == 'black')
+        print(f"validate {self.color} : {res}")
+        return res
 
     def validate_move(self, i, j):
 
