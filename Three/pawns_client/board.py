@@ -1,6 +1,6 @@
-# White pawn
 from enum import Enum
 
+# White pawn
 W = '\u2659'
 # Black pawn
 B = '\u265F'
@@ -24,9 +24,15 @@ class Board:
     def from_array(cls, grid):
         return cls(grid)
 
+    def get_unicode_figure_symbol(self):
+        if self.color == 'white':
+            return W
+        else:
+            return B
+
     def validate_selection(self, i, j):
         res = (self.grid[i][j] == W and self.color == 'white') or (self.grid[i][j] == B and self.color == 'black')
-        print(f"validate {self.color} : {res}")
+        # print(f"validate {self.color} : {res}")
         return res
 
     def validate_move(self, i, j):

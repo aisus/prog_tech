@@ -1,6 +1,5 @@
 import json
 
-from flask import Flask
 import socket
 import socket_events as events
 from threading import Thread
@@ -9,8 +8,8 @@ from game import *
 
 PORT = 8000
 
-app = Flask(__name__)
 game = Game()
+connected_sockets = []
 
 
 class SocketThread(Thread):
@@ -19,16 +18,6 @@ class SocketThread(Thread):
 
     def run(self, clientsocket, addr):
         proceed_client(clientsocket, addr)
-
-
-@app.route("/game_state", methods=['GET'])
-def api_get_game_state():
-    result = {
-        "turn": game.current_turn.name,
-        "board": game.board.grid,
-        "winner": game.board.check_win_conditions()
-    }
-    return json.dumps(result, sort_keys=True, indent=3), 200
 
 
 def get_game_state():
@@ -57,17 +46,17 @@ def get_color():
 
 
 def handle_move(json_data):
-    data = json.loads(json_data)
     result = {
-        "event": events.VALIDATE_MOVE,
+        "event": events.SET_GAME_STATE,
         "status": False,
         "turn": game.current_turn.name,
         "board": game.board.grid
     }
-    if data.color == game.current_turn:
-        is_valid = validate_positions_and_do_move(data["selected"], data["target"])
+    #if json_data["color"] == game.current_turn:
+    if True:
+        is_valid = validate_positions_and_do_move(json_data["selected"], json_data["target"])
         result = {
-            "event": events.VALIDATE_MOVE,
+            "event": events.SET_GAME_STATE,
             "status": is_valid,
             "turn": game.current_turn.name,
             "board": game.board.grid
@@ -76,6 +65,7 @@ def handle_move(json_data):
     result["winner"] = game.board.check_win_conditions()
     response = json.dumps(result, sort_keys=True, indent=3)
     return response
+
 
 def validate_positions_and_do_move(selected, target):
     t_i, t_j = target
@@ -97,6 +87,7 @@ def proceed_client_message(msg):
     elif event == events.GET_GAME_STATE:
         response = get_game_state()
     elif event == events.DO_MOVE:
+        response = handle_move(obj)
         pass
     return response
 
@@ -116,7 +107,7 @@ def proceed_client(clientsocket, addr, idx):
         clientsocket.send(response.encode('utf-8'))
 
 
-def socket_thread():
+def init_socket():
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     host = socket.gethostname()
     sock.bind((host, PORT))
@@ -125,6 +116,7 @@ def socket_thread():
     connected_clients = 0
     while True:
         c, addr = sock.accept()
+        connected_sockets.append(c)
         connected_clients += 1
         if connected_clients == 1:
             game.state = ServerState.FIRST_CLIENT_CONNECTED
@@ -136,10 +128,7 @@ def socket_thread():
 
         client_thread = Thread(target=proceed_client, args=(c, addr, connected_clients))
         client_thread.start()
-    sock.close()
 
 
 if __name__ == "__main__":
-    # Thread.start(socket_thread())
-    socket_thread()
-    # app.run(debug=True)
+    init_socket()
