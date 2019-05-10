@@ -1,4 +1,4 @@
-from board import Board
+from board import Board, Color
 from ui import *
 from tkinter import Tk
 import socket
@@ -18,7 +18,7 @@ class Application:
 
     def set_color(self, obj):
         color = obj["color"]
-        self.game_state.color = color
+        self.game_state.color = Color[color]
         self.ui.update_helper_text()
 
     def set_game_state(self, obj):
@@ -28,13 +28,16 @@ class Application:
 
     def do_move(self, target_cell):
         response = {
-            "color": self.game_state.color,
+            "color": self.game_state.color.name,
             "event": events.DO_MOVE,
             "selected": self.game_state.selected_cell,
             "target": target_cell
         }
         msg = json.dumps(response, sort_keys=True, indent=3)
         sock.send(msg.encode('utf-8'))
+
+    def stop(self):
+        self.sock.close()
 
 
 def message_handle_thread(sock: socket, app: Application):

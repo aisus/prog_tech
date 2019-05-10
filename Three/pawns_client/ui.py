@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 
 from app import Application
 from board import TurnState
@@ -25,7 +26,7 @@ class ChessUI(Frame):
         self.parent = parent
         self.app = application
 
-        # self.parent.protocol("WM_DELETE_WINDOW", self.on_closing)
+        self.parent.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         self.cursor_row, self.cursor_col = -1, -1
 
@@ -164,5 +165,6 @@ class ChessUI(Frame):
         self.app.game_state.turn = TurnState.WAITING
 
     def on_closing(self):
-        if messagebox.askokcancel("Quit", "Do you want to quit?"):
-            self.parent.destroy()
+        #if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        self.app.stop()
+        self.parent.destroy()

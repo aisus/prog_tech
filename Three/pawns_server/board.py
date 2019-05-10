@@ -72,7 +72,7 @@ class Board:
                 return False
 
             # Can go for two cells at first move
-            if i == 0:
+            if i == 1:
                 if t_i - i > 2:
                     # print('first move > 2')
                     return False

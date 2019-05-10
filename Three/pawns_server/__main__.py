@@ -20,6 +20,11 @@ class SocketThread(Thread):
         proceed_client(clientsocket, addr)
 
 
+def do_broadcast(message):
+    for s in connected_sockets:
+        s.send(message.encode('utf-8'))
+
+
 def get_game_state():
     result = {
         "event": events.SET_GAME_STATE,
@@ -37,10 +42,10 @@ def get_color():
         "color": "",
     }
     if game.state == ServerState.FIRST_CLIENT_CONNECTED:
-        result["color"] = "white"
+        result["color"] = Color.WHITE.name
     elif game.state == ServerState.BOTH_CLIENTS_CONNECTED:
         game.state = ServerState.GAME_RUNNING
-        result["color"] = "black"
+        result["color"] = Color.BLACK.name
     response = json.dumps(result, sort_keys=True, indent=3)
     return response
 
@@ -52,7 +57,7 @@ def handle_move(json_data):
         "turn": game.current_turn.name,
         "board": game.board.grid
     }
-    #if json_data["color"] == game.current_turn:
+    # if json_data["color"] == game.current_turn:
     if True:
         is_valid = validate_positions_and_do_move(json_data["selected"], json_data["target"])
         result = {
@@ -88,6 +93,7 @@ def proceed_client_message(msg):
         response = get_game_state()
     elif event == events.DO_MOVE:
         response = handle_move(obj)
+        do_broadcast(response)
         pass
     return response
 

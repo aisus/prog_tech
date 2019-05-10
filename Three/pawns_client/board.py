@@ -12,12 +12,17 @@ class TurnState(Enum):
     SELECTED = 2
 
 
+class Color(Enum):
+    WHITE = True,
+    BLACK = False
+
+
 class Board:
 
     def __init__(self, data):
         self.turn = TurnState.WAITING
         self.grid = data
-        self.color = 'white'
+        self.color = Color.WHITE
         self.selected_cell = []
 
     @classmethod
@@ -25,13 +30,13 @@ class Board:
         return cls(grid)
 
     def get_unicode_figure_symbol(self):
-        if self.color == 'white':
+        if self.color == Color.WHITE:
             return W
         else:
             return B
 
     def validate_selection(self, i, j):
-        res = (self.grid[i][j] == W and self.color == 'white') or (self.grid[i][j] == B and self.color == 'black')
+        res = (self.grid[i][j] == W and self.color == Color.WHITE) or (self.grid[i][j] == B and self.color == Color.BLACK)
         # print(f"validate {self.color} : {res}")
         return res
 
@@ -46,7 +51,7 @@ class Board:
                 return False
 
             # Can go for two cells at first move
-            if i == 0:
+            if i == 1:
                 if t_i - i > 2:
                     return False
             # Usually move for one cell
