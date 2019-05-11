@@ -1,7 +1,17 @@
 # White pawn
+from enum import Enum
+
 W = '\u2659'
 # Black pawn
 B = '\u265F'
+
+
+class Color(Enum):
+    WHITE = True,
+    BLACK = False
+
+    def __str__(self):
+        return str(self.value)
 
 
 class Board:
@@ -41,16 +51,16 @@ class Board:
             for cell in row:
                 symbols.add(cell)
         if B not in symbols:
-            return 'white'
+            return Color.WHITE.name
         if W not in symbols:
-            return 'black'
+            return Color.BLACK.name
         # Checking whether at least one of pawns goes to opposite side of a board
         for cell in self.grid[0]:
             if cell == W:
-                return 'white'
+                return Color.WHITE.name
         for cell in self.grid[-1]:
             if cell == B:
-                return 'black'
+                return Color.BLACK.name
         # Return empty string if nobody is winning
         return ''
 

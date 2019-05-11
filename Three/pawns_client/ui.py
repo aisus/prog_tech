@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 
 from app import Application
-from board import TurnState
+from game import TurnState
 
 CELLS_COUNT = 8
 MARGIN = 5
@@ -20,7 +20,7 @@ FIGURES_SIZE = 24
 
 class ChessUI(Frame):
     def __init__(self, parent, application: Application):
-        #parent.resizable(False, False)
+        # parent.resizable(False, False)
         parent.geometry("%dx%d" % (BOARD_WIDTH, BOARD_HEIGHT + 40))
         Frame.__init__(self, parent)
         self.parent = parent
@@ -57,10 +57,18 @@ class ChessUI(Frame):
     # _RENDERING________________________________________________________________________________
     def redraw(self):
         self.draw_figures()
+        self.update_helper_text()
 
     def update_helper_text(self):
         self.textbox.delete(1.0, END)
-        self.textbox.insert(1.0, f"You're {self.app.game_state.color} \n but still nigger")
+        who_moves = 'Your turn!' if self.app.game.is_our_move else 'Opponent\'s turn'
+        self.textbox.insert(1.0, f"You're {self.app.game.color.name} \n {who_moves}")
+
+    def say_winner(self, winner):
+        win_text = 'You win!' if winner == self.app.game.color.name else 'You lose!'
+        if messagebox.showinfo(title=win_text):
+            self.app.stop()
+            self.parent.destroy()
 
     def draw_grid(self):
         for i in range(CELLS_COUNT):
@@ -76,26 +84,26 @@ class ChessUI(Frame):
         self.canvas.delete("figures")
         for i in range(CELLS_COUNT):
             for j in range(CELLS_COUNT):
-                if self.app.game_state.grid[i][j] != '':
+                if self.app.game.board.grid[i][j] != '':
                     self.canvas.create_text(
                         MARGIN + j * CELL_SIZE + CELL_SIZE / 2,
                         MARGIN + i * CELL_SIZE + CELL_SIZE / 2,
-                        text=self.app.game_state.grid[i][j], tags="figures", font=('Purisa', FIGURES_SIZE)
+                        text=self.app.game.board.grid[i][j], tags="figures", font=('Purisa', FIGURES_SIZE)
                     )
 
     def draw_cursor(self):
 
         def get_cell_color():
-            if self.app.game_state.turn == TurnState.WAITING:
-                return CURSOR_ON_FIGURE_COLOR if self.app.game_state.validate_selection(self.cursor_row,
+            if self.app.game.turn == TurnState.WAITING:
+                return CURSOR_ON_FIGURE_COLOR if self.app.game.board.validate_selection(self.cursor_row,
                                                                                         self.cursor_col) \
                     else CURSOR_COLOR
-            elif self.app.game_state.turn == TurnState.SELECTED:
-                return SELECTION_COLOR if self.app.game_state.validate_move(self.cursor_row, self.cursor_col) \
+            elif self.app.game.turn == TurnState.SELECTED:
+                return SELECTION_COLOR if self.app.game.board.validate_move(self.cursor_row, self.cursor_col) \
                     else CANT_SELECT_COLOR
 
         self.canvas.delete("cursor")
-        if self.app.game_state.turn == TurnState.OPPONENT_TURN:
+        if self.app.game.turn == TurnState.OPPONENT_TURN:
             return
 
         if self.cursor_row >= 0 and self.cursor_col >= 0:
@@ -138,19 +146,19 @@ class ChessUI(Frame):
         self.update_helper_text()
 
     def return_pressed(self, event):
-        if self.app.game_state.turn == TurnState.OPPONENT_TURN:
+        if not self.app.game.is_our_move:
             return
 
-        if self.app.game_state.turn != TurnState.SELECTED:
-            if self.app.game_state.grid[self.cursor_row][self.cursor_col] == '':
+        if self.app.game.turn != TurnState.SELECTED:
+            if self.app.game.board.grid[self.cursor_row][self.cursor_col] == '':
                 return
-            if not self.app.game_state.validate_selection(self.cursor_row, self.cursor_col):
+            if not self.app.game.board.validate_selection(self.cursor_row, self.cursor_col):
                 return
-            self.app.game_state.turn = TurnState.SELECTED
-            self.app.game_state.selected_cell = [self.cursor_row, self.cursor_col]
+            self.app.game.turn = TurnState.SELECTED
+            self.app.game.board.selected_cell = [self.cursor_row, self.cursor_col]
             self.draw_selection()
         else:
-            if not self.app.game_state.validate_move(self.cursor_row, self.cursor_col):
+            if not self.app.game.board.validate_move(self.cursor_row, self.cursor_col):
                 return
             self.app.do_move([self.cursor_row, self.cursor_col])
             self.canvas.delete('cursor')
@@ -162,9 +170,9 @@ class ChessUI(Frame):
     def reset_selection(self):
         self.cursor_row, self.cursor_col = -1, -1
         self.canvas.delete("selection")
-        self.app.game_state.turn = TurnState.WAITING
+        self.app.game.turn = TurnState.WAITING
 
     def on_closing(self):
-        #if messagebox.askokcancel("Quit", "Do you want to quit?"):
+        # if messagebox.askokcancel("Quit", "Do you want to quit?"):
         self.app.stop()
         self.parent.destroy()

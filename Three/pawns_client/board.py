@@ -1,15 +1,10 @@
+
 from enum import Enum
 
 # White pawn
 W = '\u2659'
 # Black pawn
 B = '\u265F'
-
-
-class TurnState(Enum):
-    OPPONENT_TURN = 0
-    WAITING = 1,
-    SELECTED = 2
 
 
 class Color(Enum):
@@ -20,7 +15,6 @@ class Color(Enum):
 class Board:
 
     def __init__(self, data):
-        self.turn = TurnState.WAITING
         self.grid = data
         self.color = Color.WHITE
         self.selected_cell = []
@@ -29,6 +23,10 @@ class Board:
     def from_array(cls, grid):
         return cls(grid)
 
+    @classmethod
+    def empty(cls):
+        return cls([[''] * 8] * 8)
+
     def get_unicode_figure_symbol(self):
         if self.color == Color.WHITE:
             return W
@@ -36,7 +34,8 @@ class Board:
             return B
 
     def validate_selection(self, i, j):
-        res = (self.grid[i][j] == W and self.color == Color.WHITE) or (self.grid[i][j] == B and self.color == Color.BLACK)
+        res = (self.grid[i][j] == W and self.color == Color.WHITE) or (
+                    self.grid[i][j] == B and self.color == Color.BLACK)
         # print(f"validate {self.color} : {res}")
         return res
 

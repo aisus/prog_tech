@@ -77,7 +77,8 @@ def validate_positions_and_do_move(selected, target):
     game.board.selected_cell = selected
     if game.board.validate_move(t_i, t_j):
         game.board.do_move(t_i, t_j)
-        game.current_turn = Color(not game.current_turn)
+        kek = game.current_turn.value
+        game.current_turn = Color.BLACK if kek else Color.WHITE
         return True
     else:
         return False
