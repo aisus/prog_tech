@@ -139,11 +139,33 @@ class ChessUI(Frame):
                 self.reset_selection()
             else:
                 self.cursor_row, self.cursor_col = row, col
-        else:
-            self.reset_selection()
+                self.select_to_move()
+        #else:
+        #    self.reset_selection()
 
         self.draw_cursor()
         self.update_helper_text()
+
+    def select_to_move(self):
+        if not self.app.game.is_our_move:
+            return
+
+        if self.app.game.turn != TurnState.SELECTED:
+            if self.app.game.board.grid[self.cursor_row][self.cursor_col] == '':
+                return
+            if not self.app.game.board.validate_selection(self.cursor_row, self.cursor_col):
+                return
+            self.app.game.turn = TurnState.SELECTED
+            self.app.game.board.selected_cell = [self.cursor_row, self.cursor_col]
+            self.draw_selection()
+        else:
+            if not self.app.game.board.validate_move(self.cursor_row, self.cursor_col):
+                return
+            self.app.do_move([self.cursor_row, self.cursor_col])
+            self.canvas.delete('cursor')
+            self.reset_selection()
+            self.draw_figures()
+            self.update_helper_text()
 
     def return_pressed(self, event):
         if not self.app.game.is_our_move:
