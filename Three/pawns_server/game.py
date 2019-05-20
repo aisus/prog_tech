@@ -13,6 +13,7 @@ class ServerState(Enum):
 
 class Game(object):
     def __init__(self):
+        self.move_idx = 0
         self.state = ServerState.WAITING
         self.current_turn = Color.WHITE
         self.board = Board.initial_positions()

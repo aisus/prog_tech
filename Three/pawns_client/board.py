@@ -39,6 +39,11 @@ class Board:
         # print(f"validate {self.color} : {res}")
         return res
 
+    def get_score(self):
+        whites_score = 8 - sum(x.count(B) for x in self.grid)
+        blacks_score = 8 - sum(x.count(W) for x in self.grid)
+        return f"{whites_score}|{blacks_score}" if self.color.value else f"{blacks_score}|{whites_score}"
+
     def validate_move(self, i, j):
 
         def check_grid(grid, selected, target):

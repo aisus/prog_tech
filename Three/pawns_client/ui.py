@@ -20,8 +20,8 @@ FIGURES_SIZE = 24
 
 class ChessUI(Frame):
     def __init__(self, parent, application: Application):
-        # parent.resizable(False, False)
-        parent.geometry("%dx%d" % (BOARD_WIDTH, BOARD_HEIGHT + 40))
+        parent.resizable(False, False)
+        parent.geometry("%dx%d" % (BOARD_WIDTH, BOARD_HEIGHT + 70))
         Frame.__init__(self, parent)
         self.parent = parent
         self.app = application
@@ -62,13 +62,14 @@ class ChessUI(Frame):
     def update_helper_text(self):
         self.textbox.delete(1.0, END)
         who_moves = 'Your turn!' if self.app.game.is_our_move else 'Opponent\'s turn'
-        self.textbox.insert(1.0, f"You're {self.app.game.color.name} \n {who_moves}")
+        self.textbox.insert(1.0, f"You playing as {self.app.game.color.name} \n{who_moves} "
+        f"\nMoves:{self.app.game.move_idx} \nScore:{self.app.game.board.get_score()}")
 
     def say_winner(self, winner):
         win_text = 'You win!' if winner == self.app.game.color.name else 'You lose!'
         if messagebox.showinfo(title=win_text):
             self.app.stop()
-            self.parent.destroy()
+            self.parent.quit()
 
     def draw_grid(self):
         for i in range(CELLS_COUNT):
@@ -140,7 +141,7 @@ class ChessUI(Frame):
             else:
                 self.cursor_row, self.cursor_col = row, col
                 self.select_to_move()
-        #else:
+        # else:
         #    self.reset_selection()
 
         self.draw_cursor()

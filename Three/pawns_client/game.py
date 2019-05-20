@@ -15,6 +15,7 @@ class Game(object):
         self.turn = TurnState.WAITING
         self.is_our_move = True
         self.board = Board.empty()
+        self.move_idx = 0
 
     def set_color(self, color):
         self.color = color

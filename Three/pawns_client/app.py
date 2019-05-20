@@ -25,6 +25,7 @@ class Application:
     def set_board(self, obj):
         board = obj['board']
         self.game.board.grid = board
+        self.game.move_idx = obj['move_idx']
         self.game.set_turn(Color[obj['turn']])
         self.ui.redraw()
         if not obj['winner'] == '':

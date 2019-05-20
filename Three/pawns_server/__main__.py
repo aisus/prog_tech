@@ -30,7 +30,8 @@ def get_game_state():
         "event": events.SET_GAME_STATE,
         "turn": game.current_turn.name,
         "board": game.board.grid,
-        "winner": game.board.check_win_conditions()
+        "winner": game.board.check_win_conditions(),
+        "move_idx": game.move_idx
     }
     response = json.dumps(result, sort_keys=True, indent=3)
     return response
@@ -55,7 +56,8 @@ def handle_move(json_data):
         "event": events.SET_GAME_STATE,
         "status": False,
         "turn": game.current_turn.name,
-        "board": game.board.grid
+        "board": game.board.grid,
+        "move_idx": game.move_idx
     }
     # if json_data["color"] == game.current_turn:
     if True:
@@ -64,7 +66,8 @@ def handle_move(json_data):
             "event": events.SET_GAME_STATE,
             "status": is_valid,
             "turn": game.current_turn.name,
-            "board": game.board.grid
+            "board": game.board.grid,
+            "move_idx": game.move_idx
         }
     # if check_win_conditions finds no winner, it returns ''
     result["winner"] = game.board.check_win_conditions()
@@ -77,8 +80,9 @@ def validate_positions_and_do_move(selected, target):
     game.board.selected_cell = selected
     if game.board.validate_move(t_i, t_j):
         game.board.do_move(t_i, t_j)
-        kek = game.current_turn.value
-        game.current_turn = Color.BLACK if kek else Color.WHITE
+        game.move_idx += 1
+        val = game.current_turn.value
+        game.current_turn = Color.BLACK if val else Color.WHITE
         return True
     else:
         return False
@@ -99,7 +103,7 @@ def proceed_client_message(msg):
     return response
 
 
-def proceed_client(clientsocket, addr, idx):
+def proceed_client(clientsocket, addr):
     def read_message():
         msg = clientsocket.recv(8192).decode('utf-8')
         print('------>')
@@ -120,20 +124,22 @@ def init_socket():
     sock.bind((host, PORT))
     sock.listen(1)
     print(f'Server started on {host}:{PORT}')
-    connected_clients = 0
     while True:
         c, addr = sock.accept()
         connected_sockets.append(c)
-        connected_clients += 1
-        if connected_clients == 1:
+        if len(connected_sockets) == 1:
             game.state = ServerState.FIRST_CLIENT_CONNECTED
-        elif connected_clients == 2:
+        elif len(connected_sockets) == 2:
             game.state = ServerState.BOTH_CLIENTS_CONNECTED
         else:
-            # TODO handle attempt to connect where there are two clients already
             game.state = ServerState.WAITING
+            # for s in connected_sockets:
+            #     s.close()
+            # connected_sockets = []
+            # connected_sockets.append(c)
+            # game.board = Board.initial_positions()
 
-        client_thread = Thread(target=proceed_client, args=(c, addr, connected_clients))
+        client_thread = Thread(target=proceed_client, args=(c, addr))
         client_thread.start()
 
 
